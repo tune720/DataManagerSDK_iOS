@@ -1,0 +1,459 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name DataManagerSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AdSupport
+import AppTrackingTransparency
+@_exported import DataManagerSDK
+import Foundation
+import OSLog
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMOrderCancel : EventModel {
+  public var products: [DMProduct] {
+    get
+    set
+  }
+  public var orderId: Swift.String {
+    get
+    set
+  }
+  public var memberId: Swift.String {
+    get
+    set
+  }
+  public init()
+  @objc deinit
+}
+public enum DMDefaultParams : Swift.String {
+  case id
+  case type
+  case dttm
+  case triggerCode
+  case sessionId
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum DMParams : Swift.String {
+  case birthDay
+  case email
+  case emailAllowed
+  case gender
+  case memberId
+  case memberName
+  case orderId
+  case paymentAmount
+  case paymentMethod
+  case phoneNumber
+  case productId
+  case productImageUrl
+  case productName
+  case productPrice
+  case productQty
+  case products
+  case productUrl
+  case smsAllowed
+  case zipCode
+  case address
+  case totalPrice
+  case totalQuantity
+  case eventName
+  case pvInName
+  case pvOutName
+  case deeplink
+  case referrer
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMOrder : EventModel {
+  public var products: [DMProduct] {
+    get
+    set
+  }
+  public var orderId: Swift.String {
+    get
+    set
+  }
+  public var zipCode: Swift.String {
+    get
+    set
+  }
+  public var phoneNumber: Swift.String {
+    get
+    set
+  }
+  public var address: Swift.String {
+    get
+    set
+  }
+  public var totalPrice: Swift.Int {
+    get
+    set
+  }
+  public var totalQty: Swift.Int {
+    get
+    set
+  }
+  public var paymentMethod: Swift.String {
+    get
+    set
+  }
+  public var memberName: Swift.String {
+    get
+    set
+  }
+  public var email: Swift.String {
+    get
+    set
+  }
+  public var memberId: Swift.String {
+    get
+    set
+  }
+  public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMSignOut : EventModel {
+  public var memberId: Swift.String {
+    get
+    set
+  }
+  public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DMVisit : EventModel {
+  public var deepLink: Swift.String {
+    get
+    set
+  }
+  public init(pvInName: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMFavorite : EventModel {
+  public var productId: Swift.String {
+    get
+    set
+  }
+  public var productName: Swift.String {
+    get
+    set
+  }
+  public var productPrice: Swift.Int {
+    get
+    set
+  }
+  public var imageUrl: Swift.String {
+    get
+    set
+  }
+  public var productUrl: Swift.String {
+    get
+    set
+  }
+  public var productQty: Swift.Int {
+    get
+    set
+  }
+  public init()
+  @objc deinit
+}
+extension Swift.String {
+  public static func from(dict: Swift.Dictionary<Swift.String, Any>) -> Swift.String
+  public var dictionary: Swift.Dictionary<Swift.String, Any> {
+    get
+    set
+  }
+  public func height(withConstrainedWidth width: CoreFoundation.CGFloat, font: UIKit.UIFont) -> CoreFoundation.CGFloat
+  public func width(withConstrainedHeight height: CoreFoundation.CGFloat, font: UIKit.UIFont) -> CoreFoundation.CGFloat
+  public func image(width: CoreFoundation.CGFloat = 40, height: CoreFoundation.CGFloat = 40) -> UIKit.UIImage?
+  public func toFormattedCurrency() -> Swift.String
+  public func isValidPCode() -> Swift.Bool
+  public var base64Encoded: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMOrderOut : EventModel {
+  public var products: [DMProduct] {
+    get
+    set
+  }
+  public var memberId: Swift.String {
+    get
+    set
+  }
+  public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMCart : EventModel {
+  public var productId: Swift.String {
+    get
+    set
+  }
+  public var productName: Swift.String {
+    get
+    set
+  }
+  public var productPrice: Swift.Int {
+    get
+    set
+  }
+  public var productImageUrl: Swift.String {
+    get
+    set
+  }
+  public var productUrl: Swift.String {
+    get
+    set
+  }
+  public var productQty: Swift.Int {
+    get
+    set
+  }
+  public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DMOut : EventModel {
+  public init(pvOutName: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMProduct : EventModel {
+  public var productId: Swift.String {
+    get
+    set
+  }
+  public var productName: Swift.String {
+    get
+    set
+  }
+  public var productPrice: Swift.Int {
+    get
+    set
+  }
+  public var imageUrl: Swift.String {
+    get
+    set
+  }
+  public var productUrl: Swift.String {
+    get
+    set
+  }
+  public var productQty: Swift.Int {
+    get
+    set
+  }
+  public init()
+  @objc deinit
+}
+public enum DMEventType : Swift.String {
+  case pageView
+  case viewedProduct
+  case signUp
+  case signIn
+  case modifyUser
+  case signOut
+  case cart
+  case favorite
+  case order
+  case orderOut
+  case orderCancel
+  case install
+  case visit
+  case out
+  case deepLinkOpen
+  case custom
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class DataManagerSDK {
+  public static var version: Swift.String {
+    get
+  }
+  public static var installReferrer: Swift.String?
+  public static var enableLog: Swift.Bool {
+    get
+    set
+  }
+  public static func initSDK(appKey: Swift.String)
+  public static func handleUrl(url: Swift.String)
+  public static func addEvent(event: EventModel)
+  @objc deinit
+}
+extension DataManagerSDK {
+  public static func setWebView(webView: WebKit.WKWebView, hostUrl: Swift.String)
+  public static func webViewLoadFinished(webView: WebKit.WKWebView, currentUrl: Swift.String)
+}
+extension Swift.Dictionary {
+  public static func from(jsonString: Swift.String) -> Swift.Dictionary<Key, Value>
+  public var jsonString: Swift.String {
+    get
+    set
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMViewedProduct : EventModel {
+  public var productId: Swift.String {
+    get
+    set
+  }
+  public var productName: Swift.String {
+    get
+    set
+  }
+  public var productPrice: Swift.Int {
+    get
+    set
+  }
+  public var imageUrl: Swift.String {
+    get
+    set
+  }
+  public var productUrl: Swift.String {
+    get
+    set
+  }
+  public var productQty: Swift.Int {
+    get
+    set
+  }
+  public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DMInstall : EventModel {
+  public init(referrer: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMSignIn : EventModel {
+  public var memberId: Swift.String {
+    get
+    set
+  }
+  public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMModifyUserInfo : EventModel {
+  public var memberId: Swift.String {
+    get
+    set
+  }
+  public var memberName: Swift.String {
+    get
+    set
+  }
+  public var phoneNumber: Swift.String {
+    get
+    set
+  }
+  public var email: Swift.String {
+    get
+    set
+  }
+  public var smsAllowed: Swift.Bool {
+    get
+    set
+  }
+  public var emailAllowed: Swift.Bool {
+    get
+    set
+  }
+  public var birthDay: Swift.String {
+    get
+    set
+  }
+  public var gender: Swift.String {
+    get
+    set
+  }
+  public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class EventModel : Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+extension EventModel {
+  public func addCustomData(key: Swift.String, value: Any)
+  public func addCustomData(key: DMParams, value: Any)
+  public func toDictionary(parentKey: Swift.String) -> Swift.Dictionary<Swift.String, Any>?
+}
+@_hasMissingDesignatedInitializers public class DMCustomEvent : EventModel {
+  public init(eventName: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMSignUp : EventModel {
+  public var memberId: Swift.String {
+    get
+    set
+  }
+  public var memberName: Swift.String {
+    get
+    set
+  }
+  public var phoneNumber: Swift.String {
+    get
+    set
+  }
+  public var email: Swift.String {
+    get
+    set
+  }
+  public var smsAllowed: Swift.Bool {
+    get
+    set
+  }
+  public var emailAllowed: Swift.Bool {
+    get
+    set
+  }
+  public var birthday: Swift.String {
+    get
+    set
+  }
+  public var gender: Swift.String {
+    get
+    set
+  }
+  public init()
+  @objc deinit
+}
+public enum DMTriggerType : Swift.String {
+  case loadPage
+  case click
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class DMDeepLinkOpen : EventModel {
+  public init(pvInName: Swift.String, deepLink: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DMPageView : EventModel {
+  public init(pvInName: Swift.String, pvOutName: Swift.String)
+  @objc deinit
+}
+extension DMDefaultParams : Swift.Equatable {}
+extension DMDefaultParams : Swift.Hashable {}
+extension DMDefaultParams : Swift.RawRepresentable {}
+extension DMParams : Swift.Equatable {}
+extension DMParams : Swift.Hashable {}
+extension DMParams : Swift.RawRepresentable {}
+extension DMEventType : Swift.Equatable {}
+extension DMEventType : Swift.Hashable {}
+extension DMEventType : Swift.RawRepresentable {}
+extension DMTriggerType : Swift.Equatable {}
+extension DMTriggerType : Swift.Hashable {}
+extension DMTriggerType : Swift.RawRepresentable {}

@@ -1,0 +1,11 @@
+framework module DataManagerSDK {
+  umbrella header "DataManagerSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module DataManagerSDK.Swift {
+  header "DataManagerSDK-Swift.h"
+  requires objc
+}
