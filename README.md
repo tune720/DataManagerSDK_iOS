@@ -57,6 +57,7 @@ IDFA값을 사용하지 못 할 경우 VenderID를 사용하도록 되어 있으
 <string> 사용자 활동 분석을 위한 식별을 위해 해당 데이터가 사용됩니다. </string>
 ```
 
+
 ####  (2) ATTrackingManager 코드 적용
 
 ```swift
@@ -71,6 +72,11 @@ else {
   // iOS 14.0 미만 버전의 경우
 }
 ```
+
+
+####  (2) User Script Sandboxing 옵션 변경
+App TARGET의 Buid Setting 에서 User Script Sandboxing을 검색, 'No' 로 변경시켜 줍니다.   
+* 빌드시 특별히 에러가 발생하지 않는다면 적용하지 않아도 됩니다.
 
 
 ## 3. SDK 초기화 및 사용방법

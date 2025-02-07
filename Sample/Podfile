@@ -1,0 +1,8 @@
+
+target 'Sample' do
+
+  use_frameworks!
+
+  pod 'DataManagerSDK'
+  
+end
