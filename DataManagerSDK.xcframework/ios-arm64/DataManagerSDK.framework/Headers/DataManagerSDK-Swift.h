@@ -280,6 +280,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import Foundation;
+@import ObjectiveC;
 #endif
 
 #endif
@@ -301,6 +303,331 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+
+SWIFT_CLASS("_TtC14DataManagerSDK10EventModel")
+@interface EventModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSString;
+
+SWIFT_CLASS("_TtC14DataManagerSDK6DMCart")
+@interface DMCart : EventModel
+/// 상품 코드
+@property (nonatomic, copy) NSString * _Nonnull productId;
+/// 상품 이름
+@property (nonatomic, copy) NSString * _Nonnull productName;
+/// 상품 가격
+@property (nonatomic) NSInteger productPrice;
+/// 상품 이미지 URL
+@property (nonatomic, copy) NSString * _Nonnull productImageUrl;
+/// 상품 URL
+@property (nonatomic, copy) NSString * _Nonnull productUrl;
+/// 상품 수량
+@property (nonatomic) NSInteger productQty;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK13DMCustomEvent")
+@interface DMCustomEvent : EventModel
+- (nonnull instancetype)initWithEventName:(NSString * _Nonnull)eventName OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK14DMDeepLinkOpen")
+@interface DMDeepLinkOpen : EventModel
+- (nonnull instancetype)initWithPvInName:(NSString * _Nonnull)pvInName deepLink:(NSString * _Nonnull)deepLink OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, DMDefaultParams, open) {
+  DMDefaultParamsId = 0,
+  DMDefaultParamsType = 1,
+  DMDefaultParamsDttm = 2,
+  DMDefaultParamsTriggerCode = 3,
+  DMDefaultParamsSessionId = 4,
+};
+
+typedef SWIFT_ENUM(NSInteger, DMEventType, open) {
+/// 방문, 페이지 로드
+  DMEventTypePageView = 0,
+/// 본상품, 상품 상세보기
+  DMEventTypeViewedProduct = 1,
+/// 회원가입
+  DMEventTypeSignUp = 2,
+/// 로그인
+  DMEventTypeSignIn = 3,
+/// 회원정보 수정
+  DMEventTypeModifyUser = 4,
+/// 회원탈퇴
+  DMEventTypeSignOut = 5,
+/// 장바구니
+  DMEventTypeCart = 6,
+/// 찜
+  DMEventTypeFavorite = 7,
+/// 결제
+  DMEventTypeOrder = 8,
+/// 결제 이탈
+  DMEventTypeOrderOut = 9,
+/// 결제(주문) 취소
+  DMEventTypeOrderCancel = 10,
+/// 설치
+  DMEventTypeInstall = 11,
+/// 실행
+  DMEventTypeVisit = 12,
+/// 종료
+  DMEventTypeOut = 13,
+/// 딥링크로 앱 오픈
+  DMEventTypeDeepLinkOpen = 14,
+/// 사용자 커스텀 이벤트
+  DMEventTypeCustom = 15,
+};
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK10DMFavorite")
+@interface DMFavorite : EventModel
+@property (nonatomic, copy) NSString * _Nonnull productId;
+@property (nonatomic, copy) NSString * _Nonnull productName;
+@property (nonatomic) NSInteger productPrice;
+@property (nonatomic, copy) NSString * _Nonnull imageUrl;
+@property (nonatomic, copy) NSString * _Nonnull productUrl;
+@property (nonatomic) NSInteger productQty;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK9DMInstall")
+@interface DMInstall : EventModel
+- (nonnull instancetype)initWithReferrer:(NSString * _Nullable)referrer OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK16DMModifyUserInfo")
+@interface DMModifyUserInfo : EventModel
+@property (nonatomic, copy) NSString * _Nonnull memberId;
+@property (nonatomic, copy) NSString * _Nonnull memberName;
+@property (nonatomic, copy) NSString * _Nonnull phoneNumber;
+@property (nonatomic, copy) NSString * _Nonnull email;
+@property (nonatomic) BOOL smsAllowed;
+@property (nonatomic) BOOL emailAllowed;
+@property (nonatomic, copy) NSString * _Nonnull birthDay;
+@property (nonatomic, copy) NSString * _Nonnull gender;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class DMProduct;
+
+SWIFT_CLASS("_TtC14DataManagerSDK7DMOrder")
+@interface DMOrder : EventModel
+@property (nonatomic, copy) NSArray<DMProduct *> * _Nonnull products;
+@property (nonatomic, copy) NSString * _Nonnull orderId;
+@property (nonatomic, copy) NSString * _Nonnull zipCode;
+@property (nonatomic, copy) NSString * _Nonnull phoneNumber;
+@property (nonatomic, copy) NSString * _Nonnull address;
+@property (nonatomic) NSInteger totalPrice;
+@property (nonatomic) NSInteger totalQty;
+@property (nonatomic, copy) NSString * _Nonnull paymentMethod;
+@property (nonatomic, copy) NSString * _Nonnull memberName;
+@property (nonatomic, copy) NSString * _Nonnull email;
+@property (nonatomic, copy) NSString * _Nonnull memberId;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK13DMOrderCancel")
+@interface DMOrderCancel : EventModel
+@property (nonatomic, copy) NSArray<DMProduct *> * _Nonnull products;
+@property (nonatomic, copy) NSString * _Nonnull orderId;
+@property (nonatomic, copy) NSString * _Nonnull memberId;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK10DMOrderOut")
+@interface DMOrderOut : EventModel
+@property (nonatomic, copy) NSArray<DMProduct *> * _Nonnull products;
+@property (nonatomic, copy) NSString * _Nonnull memberId;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK5DMOut")
+@interface DMOut : EventModel
+- (nonnull instancetype)initWithPvOutName:(NSString * _Nonnull)pvOutName OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK10DMPageView")
+@interface DMPageView : EventModel
+- (nonnull instancetype)initWithPvInName:(NSString * _Nonnull)pvInName pvOutName:(NSString * _Nonnull)pvOutName OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, DMParams, open) {
+/// 생일
+  DMParamsBirthDay = 0,
+/// Email
+  DMParamsEmail = 1,
+/// Email 수신 여부
+  DMParamsEmailAllowed = 2,
+/// 성별
+  DMParamsGender = 3,
+/// 사용자(회원) ID
+  DMParamsMemberId = 4,
+/// 사용자(회원) 이름
+  DMParamsMemberName = 5,
+/// 주문 번호
+  DMParamsOrderId = 6,
+/// 총 결제 금액
+  DMParamsPaymentAmount = 7,
+/// 결제 수단
+  DMParamsPaymentMethod = 8,
+/// 핸드폰(전화) 번호
+  DMParamsPhoneNumber = 9,
+/// 상품 코드
+  DMParamsProductId = 10,
+/// 상품 이미지 URL
+  DMParamsProductImageUrl = 11,
+/// 상품명
+  DMParamsProductName = 12,
+/// 상품 가격
+  DMParamsProductPrice = 13,
+/// 상품 수량
+  DMParamsProductQty = 14,
+/// 상품 목록
+  DMParamsProducts = 15,
+/// 상품 URL
+  DMParamsProductUrl = 16,
+/// SMS 수신 여부
+  DMParamsSmsAllowed = 17,
+/// 우편번호
+  DMParamsZipCode = 18,
+/// 주소
+  DMParamsAddress = 19,
+/// 총 가격
+  DMParamsTotalPrice = 20,
+/// 총 수량
+  DMParamsTotalQuantity = 21,
+/// 커스텀 이벤트의 이벤트 명
+  DMParamsEventName = 22,
+/// 화면 전환시 전환된 화면 이름
+  DMParamsPvInName = 23,
+/// 화면 전환시 이전 화면 이름
+  DMParamsPvOutName = 24,
+/// 화면 오픈을 deep link로 진행한 경우 deep link URL
+  DMParamsDeeplink = 25,
+/// referrer 값
+  DMParamsReferrer = 26,
+};
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK9DMProduct")
+@interface DMProduct : EventModel
+@property (nonatomic, copy) NSString * _Nonnull productId;
+@property (nonatomic, copy) NSString * _Nonnull productName;
+@property (nonatomic) NSInteger productPrice;
+@property (nonatomic, copy) NSString * _Nonnull imageUrl;
+@property (nonatomic, copy) NSString * _Nonnull productUrl;
+@property (nonatomic) NSInteger productQty;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK8DMSignIn")
+@interface DMSignIn : EventModel
+@property (nonatomic, copy) NSString * _Nonnull memberId;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK9DMSignOut")
+@interface DMSignOut : EventModel
+@property (nonatomic, copy) NSString * _Nonnull memberId;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK8DMSignUp")
+@interface DMSignUp : EventModel
+@property (nonatomic, copy) NSString * _Nonnull memberId;
+@property (nonatomic, copy) NSString * _Nonnull memberName;
+@property (nonatomic, copy) NSString * _Nonnull phoneNumber;
+@property (nonatomic, copy) NSString * _Nonnull email;
+@property (nonatomic) BOOL smsAllowed;
+@property (nonatomic) BOOL emailAllowed;
+@property (nonatomic, copy) NSString * _Nonnull birthday;
+@property (nonatomic, copy) NSString * _Nonnull gender;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, DMTriggerType, open) {
+/// 페이지 로드
+  DMTriggerTypeLoadPage = 0,
+/// 클릭(터치 이벤트)
+  DMTriggerTypeClick = 1,
+};
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK15DMViewedProduct")
+@interface DMViewedProduct : EventModel
+@property (nonatomic, copy) NSString * _Nonnull productId;
+@property (nonatomic, copy) NSString * _Nonnull productName;
+@property (nonatomic) NSInteger productPrice;
+@property (nonatomic, copy) NSString * _Nonnull imageUrl;
+@property (nonatomic, copy) NSString * _Nonnull productUrl;
+@property (nonatomic) NSInteger productQty;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK7DMVisit")
+@interface DMVisit : EventModel
+@property (nonatomic, copy) NSString * _Nonnull deepLink;
+- (nonnull instancetype)initWithPvInName:(NSString * _Nonnull)pvInName OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC14DataManagerSDK14DataManagerSDK")
+@interface DataManagerSDK : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull SDK_VERSION;)
++ (NSString * _Nonnull)SDK_VERSION SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable installReferrer;)
++ (NSString * _Nullable)installReferrer SWIFT_WARN_UNUSED_RESULT;
++ (void)setInstallReferrer:(NSString * _Nullable)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL enableLog;)
++ (BOOL)enableLog SWIFT_WARN_UNUSED_RESULT;
++ (void)setEnableLog:(BOOL)value;
++ (void)initSDKWithAppKey:(NSString * _Nonnull)appKey SWIFT_METHOD_FAMILY(none);
++ (void)handleUrlWithUrl:(NSString * _Nonnull)url;
++ (void)addEventWithEvent:(EventModel * _Nonnull)event;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class WKWebView;
+
+@interface DataManagerSDK (SWIFT_EXTENSION(DataManagerSDK))
++ (void)setWebViewWithWebView:(WKWebView * _Nonnull)webView hostUrl:(NSString * _Nonnull)hostUrl;
++ (void)webViewLoadFinishedWithWebView:(WKWebView * _Nonnull)webView currentUrl:(NSString * _Nonnull)currentUrl;
+@end
+
+
+
+@interface EventModel (SWIFT_EXTENSION(DataManagerSDK))
+- (void)addCustomDataWithKey:(NSString * _Nonnull)key value:(id _Nonnull)value;
+- (void)addCustomDataWithParam:(enum DMParams)key value:(id _Nonnull)value;
+@end
+
 
 
 

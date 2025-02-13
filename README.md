@@ -14,6 +14,13 @@
 
 DataManager SDK는 Swift로 개발되었습니다. Swift 기반의 프로젝트에서 DataManager SDK를 사용하시려면 반드시 최신 버전의 Xcode를 사용해주세요.
 
+## 최신 버전 및 변경사항
+- 최신버전 : 1.0.1
+- 변경사항
+  - Objective-C 지원
+<br>
+<br><br>
+
 
 ## 1. SDK 설치하기
 ### 1) Cocoapods 사용하여 설치
@@ -41,8 +48,9 @@ iOS 9부터 ATS(App Transport Security) 기능이 기본적으로 활성화 되�
 </dict>
 ```
 ### 2) Objective-C 프로젝트
-DataManager SDK는 Swift 기반으로 개발되어 별도로 Objective-C 관련 함수들을 지원하지 않습니다.  
-만약 Objective-C 기반의 프로젝트에서 본 SDK를 사용하고자 한다면 별도의 swift 브릿지 함수를 작성하셔야 할 수 있습니다.
+DataManager SDK는 Swift 기반으로 개발되었으나, Objective-C 또한 지원 하도록 구현되어 있습니다.  
+다만 가이드 문서는 Swift를 기준으로 설명하고 있으며, 해당 내용을 참고하여 Objective-C에서도 활용하시면 됩니다.
+
 
 
 ### 4) ATT(App Tracking Transparency) framework 적용
@@ -240,4 +248,13 @@ func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
 
 ```
 
+<br>
+<br>
+<br>
 
+
+# DataManager iOS SDK Release History
+ | version |        Description        |
+ | :-----: | :------------------------ |
+ | 1.0.1   |  Objective-C 지원        |
+ | 1.0.0   |  first Release        |

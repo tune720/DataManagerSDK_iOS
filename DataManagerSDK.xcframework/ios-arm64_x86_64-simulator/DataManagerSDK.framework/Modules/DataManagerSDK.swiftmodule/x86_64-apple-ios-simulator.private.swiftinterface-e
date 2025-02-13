@@ -13,35 +13,38 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMOrderCancel : DataManagerSDK.EventModel {
-  public var products: [DataManagerSDK.DMProduct] {
-    get
-    set
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class DMOrderCancel : DataManagerSDK.EventModel {
+  @objc public var products: [DataManagerSDK.DMProduct] {
+    @objc get
+    @objc set
   }
-  public var orderId: Swift.String {
-    get
-    set
+  @objc public var orderId: Swift.String {
+    @objc get
+    @objc set
   }
-  public var memberId: Swift.String {
-    get
-    set
+  @objc public var memberId: Swift.String {
+    @objc get
+    @objc set
   }
-  public init()
+  @objc override dynamic public init()
   @objc deinit
 }
-public enum DMDefaultParams : Swift.String {
+@objc public enum DMDefaultParams : Swift.Int {
   case id
   case type
   case dttm
   case triggerCode
   case sessionId
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
+  public var stringValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
 }
-public enum DMParams : Swift.String {
+@objc public enum DMParams : Swift.Int {
   case birthDay
   case email
   case emailAllowed
@@ -69,102 +72,105 @@ public enum DMParams : Swift.String {
   case pvOutName
   case deeplink
   case referrer
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
+  public var stringValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMOrder : DataManagerSDK.EventModel {
-  public var products: [DataManagerSDK.DMProduct] {
-    get
-    set
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class DMOrder : DataManagerSDK.EventModel {
+  @objc public var products: [DataManagerSDK.DMProduct] {
+    @objc get
+    @objc set
   }
-  public var orderId: Swift.String {
-    get
-    set
+  @objc public var orderId: Swift.String {
+    @objc get
+    @objc set
   }
-  public var zipCode: Swift.String {
-    get
-    set
+  @objc public var zipCode: Swift.String {
+    @objc get
+    @objc set
   }
-  public var phoneNumber: Swift.String {
-    get
-    set
+  @objc public var phoneNumber: Swift.String {
+    @objc get
+    @objc set
   }
-  public var address: Swift.String {
-    get
-    set
+  @objc public var address: Swift.String {
+    @objc get
+    @objc set
   }
-  public var totalPrice: Swift.Int {
-    get
-    set
+  @objc public var totalPrice: Swift.Int {
+    @objc get
+    @objc set
   }
-  public var totalQty: Swift.Int {
-    get
-    set
+  @objc public var totalQty: Swift.Int {
+    @objc get
+    @objc set
   }
-  public var paymentMethod: Swift.String {
-    get
-    set
+  @objc public var paymentMethod: Swift.String {
+    @objc get
+    @objc set
   }
-  public var memberName: Swift.String {
-    get
-    set
+  @objc public var memberName: Swift.String {
+    @objc get
+    @objc set
   }
-  public var email: Swift.String {
-    get
-    set
+  @objc public var email: Swift.String {
+    @objc get
+    @objc set
   }
-  public var memberId: Swift.String {
-    get
-    set
+  @objc public var memberId: Swift.String {
+    @objc get
+    @objc set
   }
-  public init()
+  @objc override dynamic public init()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMSignOut : DataManagerSDK.EventModel {
-  public var memberId: Swift.String {
-    get
-    set
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class DMSignOut : DataManagerSDK.EventModel {
+  @objc public var memberId: Swift.String {
+    @objc get
+    @objc set
   }
-  public init()
+  @objc override dynamic public init()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class DMVisit : DataManagerSDK.EventModel {
-  public var deepLink: Swift.String {
-    get
-    set
+@_hasMissingDesignatedInitializers @objc public class DMVisit : DataManagerSDK.EventModel {
+  @objc public var deepLink: Swift.String {
+    @objc get
+    @objc set
   }
-  public init(pvInName: Swift.String)
+  @objc public init(pvInName: Swift.String)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMFavorite : DataManagerSDK.EventModel {
-  public var productId: Swift.String {
-    get
-    set
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class DMFavorite : DataManagerSDK.EventModel {
+  @objc public var productId: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productName: Swift.String {
-    get
-    set
+  @objc public var productName: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productPrice: Swift.Int {
-    get
-    set
+  @objc public var productPrice: Swift.Int {
+    @objc get
+    @objc set
   }
-  public var imageUrl: Swift.String {
-    get
-    set
+  @objc public var imageUrl: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productUrl: Swift.String {
-    get
-    set
+  @objc public var productUrl: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productQty: Swift.Int {
-    get
-    set
+  @objc public var productQty: Swift.Int {
+    @objc get
+    @objc set
   }
-  public init()
+  @objc override dynamic public init()
   @objc deinit
 }
 extension Swift.String {
@@ -182,79 +188,79 @@ extension Swift.String {
     get
   }
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMOrderOut : DataManagerSDK.EventModel {
-  public var products: [DataManagerSDK.DMProduct] {
-    get
-    set
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class DMOrderOut : DataManagerSDK.EventModel {
+  @objc public var products: [DataManagerSDK.DMProduct] {
+    @objc get
+    @objc set
   }
-  public var memberId: Swift.String {
-    get
-    set
+  @objc public var memberId: Swift.String {
+    @objc get
+    @objc set
   }
-  public init()
+  @objc override dynamic public init()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMCart : DataManagerSDK.EventModel {
-  public var productId: Swift.String {
-    get
-    set
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class DMCart : DataManagerSDK.EventModel {
+  @objc public var productId: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productName: Swift.String {
-    get
-    set
+  @objc public var productName: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productPrice: Swift.Int {
-    get
-    set
+  @objc public var productPrice: Swift.Int {
+    @objc get
+    @objc set
   }
-  public var productImageUrl: Swift.String {
-    get
-    set
+  @objc public var productImageUrl: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productUrl: Swift.String {
-    get
-    set
+  @objc public var productUrl: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productQty: Swift.Int {
-    get
-    set
+  @objc public var productQty: Swift.Int {
+    @objc get
+    @objc set
   }
-  public init()
+  @objc override dynamic public init()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class DMOut : DataManagerSDK.EventModel {
-  public init(pvOutName: Swift.String)
+@_hasMissingDesignatedInitializers @objc public class DMOut : DataManagerSDK.EventModel {
+  @objc public init(pvOutName: Swift.String)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMProduct : DataManagerSDK.EventModel {
-  public var productId: Swift.String {
-    get
-    set
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class DMProduct : DataManagerSDK.EventModel {
+  @objc public var productId: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productName: Swift.String {
-    get
-    set
+  @objc public var productName: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productPrice: Swift.Int {
-    get
-    set
+  @objc public var productPrice: Swift.Int {
+    @objc get
+    @objc set
   }
-  public var imageUrl: Swift.String {
-    get
-    set
+  @objc public var imageUrl: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productUrl: Swift.String {
-    get
-    set
+  @objc public var productUrl: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productQty: Swift.Int {
-    get
-    set
+  @objc public var productQty: Swift.Int {
+    @objc get
+    @objc set
   }
-  public init()
+  @objc override dynamic public init()
   @objc deinit
 }
-public enum DMEventType : Swift.String {
+@objc public enum DMEventType : Swift.Int {
   case pageView
   case viewedProduct
   case signUp
@@ -271,29 +277,33 @@ public enum DMEventType : Swift.String {
   case out
   case deepLinkOpen
   case custom
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
+  public var stringValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class DataManagerSDK {
-  public static var version: Swift.String {
-    get
+@_inheritsConvenienceInitializers @objc public class DataManagerSDK : ObjectiveC.NSObject {
+  @objc public static var SDK_VERSION: Swift.String {
+    @objc get
   }
-  public static var installReferrer: Swift.String?
-  public static var enableLog: Swift.Bool {
-    get
-    set
+  @objc public static var installReferrer: Swift.String?
+  @objc public static var enableLog: Swift.Bool {
+    @objc get
+    @objc set
   }
-  public static func initSDK(appKey: Swift.String)
-  public static func handleUrl(url: Swift.String)
-  public static func addEvent(event: DataManagerSDK.EventModel)
+  @objc public static func initSDK(appKey: Swift.String)
+  @objc public static func handleUrl(url: Swift.String)
+  @objc public static func addEvent(event: DataManagerSDK.EventModel)
+  @objc override dynamic public init()
   @objc deinit
 }
 extension DataManagerSDK.DataManagerSDK {
-  public static func setWebView(webView: WebKit.WKWebView, hostUrl: Swift.String)
-  public static func webViewLoadFinished(webView: WebKit.WKWebView, currentUrl: Swift.String)
+  @objc public static func setWebView(webView: WebKit.WKWebView, hostUrl: Swift.String)
+  @objc public static func webViewLoadFinished(webView: WebKit.WKWebView, currentUrl: Swift.String)
 }
 extension Swift.Dictionary {
   public static func from(jsonString: Swift.String) -> Swift.Dictionary<Key, Value>
@@ -302,147 +312,151 @@ extension Swift.Dictionary {
     set
   }
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMViewedProduct : DataManagerSDK.EventModel {
-  public var productId: Swift.String {
-    get
-    set
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class DMViewedProduct : DataManagerSDK.EventModel {
+  @objc public var productId: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productName: Swift.String {
-    get
-    set
+  @objc public var productName: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productPrice: Swift.Int {
-    get
-    set
+  @objc public var productPrice: Swift.Int {
+    @objc get
+    @objc set
   }
-  public var imageUrl: Swift.String {
-    get
-    set
+  @objc public var imageUrl: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productUrl: Swift.String {
-    get
-    set
+  @objc public var productUrl: Swift.String {
+    @objc get
+    @objc set
   }
-  public var productQty: Swift.Int {
-    get
-    set
+  @objc public var productQty: Swift.Int {
+    @objc get
+    @objc set
   }
-  public init()
+  @objc override dynamic public init()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class DMInstall : DataManagerSDK.EventModel {
-  public init(referrer: Swift.String?)
+@_hasMissingDesignatedInitializers @objc public class DMInstall : DataManagerSDK.EventModel {
+  @objc public init(referrer: Swift.String?)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMSignIn : DataManagerSDK.EventModel {
-  public var memberId: Swift.String {
-    get
-    set
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class DMSignIn : DataManagerSDK.EventModel {
+  @objc public var memberId: Swift.String {
+    @objc get
+    @objc set
   }
-  public init()
+  @objc override dynamic public init()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMModifyUserInfo : DataManagerSDK.EventModel {
-  public var memberId: Swift.String {
-    get
-    set
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class DMModifyUserInfo : DataManagerSDK.EventModel {
+  @objc public var memberId: Swift.String {
+    @objc get
+    @objc set
   }
-  public var memberName: Swift.String {
-    get
-    set
+  @objc public var memberName: Swift.String {
+    @objc get
+    @objc set
   }
-  public var phoneNumber: Swift.String {
-    get
-    set
+  @objc public var phoneNumber: Swift.String {
+    @objc get
+    @objc set
   }
-  public var email: Swift.String {
-    get
-    set
+  @objc public var email: Swift.String {
+    @objc get
+    @objc set
   }
-  public var smsAllowed: Swift.Bool {
-    get
-    set
+  @objc public var smsAllowed: Swift.Bool {
+    @objc get
+    @objc set
   }
-  public var emailAllowed: Swift.Bool {
-    get
-    set
+  @objc public var emailAllowed: Swift.Bool {
+    @objc get
+    @objc set
   }
-  public var birthDay: Swift.String {
-    get
-    set
+  @objc public var birthDay: Swift.String {
+    @objc get
+    @objc set
   }
-  public var gender: Swift.String {
-    get
-    set
+  @objc public var gender: Swift.String {
+    @objc get
+    @objc set
   }
-  public init()
+  @objc override dynamic public init()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class EventModel : Swift.Codable {
+@_inheritsConvenienceInitializers @objc public class EventModel : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 extension DataManagerSDK.EventModel {
-  public func addCustomData(key: Swift.String, value: Any)
-  public func addCustomData(key: DataManagerSDK.DMParams, value: Any)
+  @objc dynamic public func addCustomData(key: Swift.String, value: Any)
+  @objc dynamic public func addCustomData(param key: DataManagerSDK.DMParams, value: Any)
   public func toDictionary(parentKey: Swift.String) -> Swift.Dictionary<Swift.String, Any>?
 }
-@_hasMissingDesignatedInitializers public class DMCustomEvent : DataManagerSDK.EventModel {
-  public init(eventName: Swift.String)
+@_hasMissingDesignatedInitializers @objc public class DMCustomEvent : DataManagerSDK.EventModel {
+  @objc public init(eventName: Swift.String)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DMSignUp : DataManagerSDK.EventModel {
-  public var memberId: Swift.String {
-    get
-    set
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class DMSignUp : DataManagerSDK.EventModel {
+  @objc public var memberId: Swift.String {
+    @objc get
+    @objc set
   }
-  public var memberName: Swift.String {
-    get
-    set
+  @objc public var memberName: Swift.String {
+    @objc get
+    @objc set
   }
-  public var phoneNumber: Swift.String {
-    get
-    set
+  @objc public var phoneNumber: Swift.String {
+    @objc get
+    @objc set
   }
-  public var email: Swift.String {
-    get
-    set
+  @objc public var email: Swift.String {
+    @objc get
+    @objc set
   }
-  public var smsAllowed: Swift.Bool {
-    get
-    set
+  @objc public var smsAllowed: Swift.Bool {
+    @objc get
+    @objc set
   }
-  public var emailAllowed: Swift.Bool {
-    get
-    set
+  @objc public var emailAllowed: Swift.Bool {
+    @objc get
+    @objc set
   }
-  public var birthday: Swift.String {
-    get
-    set
+  @objc public var birthday: Swift.String {
+    @objc get
+    @objc set
   }
-  public var gender: Swift.String {
-    get
-    set
+  @objc public var gender: Swift.String {
+    @objc get
+    @objc set
   }
-  public init()
+  @objc override dynamic public init()
   @objc deinit
 }
-public enum DMTriggerType : Swift.String {
+@objc public enum DMTriggerType : Swift.Int {
   case loadPage
   case click
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
+  public var stringValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class DMDeepLinkOpen : DataManagerSDK.EventModel {
-  public init(pvInName: Swift.String, deepLink: Swift.String)
+@_hasMissingDesignatedInitializers @objc public class DMDeepLinkOpen : DataManagerSDK.EventModel {
+  @objc public init(pvInName: Swift.String, deepLink: Swift.String)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class DMPageView : DataManagerSDK.EventModel {
-  public init(pvInName: Swift.String, pvOutName: Swift.String)
+@_hasMissingDesignatedInitializers @objc public class DMPageView : DataManagerSDK.EventModel {
+  @objc public init(pvInName: Swift.String, pvOutName: Swift.String)
   @objc deinit
 }
 extension DataManagerSDK.DMDefaultParams : Swift.Equatable {}

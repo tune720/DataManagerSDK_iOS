@@ -12,6 +12,6 @@ import Foundation
 
 class AppConstants {
     
-    static let appKey = "urxxgofd5s1gurxxgofd5s"
-    static let enableLog = true
+    static let appKey = "{APP_KEY}"
+    static let enableLog = false
 }
