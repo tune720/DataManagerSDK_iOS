@@ -130,6 +130,28 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
   //생성된 이벤트 전달
   DataManagerSDK.addEvent(event: cart)
+  
+  /**
+   * ENProduct 리스트를 전달하는 경우
+   */
+  let product = DMProduct()       
+  product.productId = "product_id"
+  product.productName = "상품명"
+  ...
+
+  var products: [DMProduct] = [ product, .... ]
+
+  let order = DMOrder()
+  order.products = products
+  ...
+
+  // products가 없는 객체에서 DMProduct를 설정잎 필요한 경우 아래 방법을 사용할 수 있습니다.
+  // 관리자 페이지 설정에서 products를 받도록 설정하지 않으면 적용이 되지 않는점 참고 바랍니다.
+  order.addCustomData(DMParams.products.stringValue, products) 
+
+
+  DataManagerSDK.addEvent(event: order)
+
   ```
   <br>
 
@@ -173,24 +195,24 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   <br>
 
 ### 3) 이벤트 타입
-| 클래스             | 구분            |        설명         |
-| :-------          | :--------:    | :------------------------ |
-| DMSignIn          |   기본         | 사용자 로그인 |
-| DMSignOut         |   기본         | 회원 탈퇴 |
-| DMSignUp          |   기본         | 회원 가입 |
-| DMModifyUserInfo  |   기본         | 사용자 정보 수정  |
-| DMProduct         |   기본         | 상품관련 이벤트에서 상품정보를 담아준다. |
-| DMViewedProduct   |   기본         | 상품에 대한 상세 보기등을 처리하기 위한 이벤트 |
-| DMFavorite        |   기본         | 상품에 대한 좋아요(즐겨찾기) 관련 이벤트  |
-| DMCart            |   기본         | 장바구니 이벤트  |
-| DMOrder           |   기본         | 상품 구매 이벤트(구매 화면으로 이동) |
-| DMOrderCancel     |   기본         | (결제한)구매 취소  |
-| DMOrderOut        |   기본         | 구매 화면에서 결제를 하지 않고 빠져나간 경우 |
-| DMCustomEvent     |   사용자 지정    | 사용자 지정 이벤트  |
-| DMInstall         |   SDK 자체 처리 | 앱 설치 이벤트  |
-| DMVisit           |   SDK 자체 처리 | 앱 실행 (외부에서 앱 진입 등) |
-| DMPageView        |   SDK 자체 처리 | 화면 전환 이벤트 ( Activity 단위 처리) |
-| DMOut             |   SDK 자체 처리 | 앱 종료 이벤트 |
+| 클래스             | 구분            | 필수 <br> 파라메터        |        설명         |
+| :-------          | :---------:   | :-------------:    | :------------------------ |
+| DMSignIn          |   기본         | memberId | 사용자 로그인 |
+| DMSignOut         |   기본         | memberId | 회원 탈퇴 |
+| DMSignUp          |   기본         | memberId | 회원 가입 |
+| DMModifyUserInfo  |   기본         | memberId | 사용자 정보 수정  |
+| DMProduct         |   기본         | productId <br> productName <br> productPrice <br> productQty | 상품관련 이벤트에서 상품정보를 담아 주기 위해 사용. <br>DMOrder, DMOrderOut, DMOrderCancel에서 사용되며, 별도 이벤트로 처리되지는 않습니다. |
+| DMViewedProduct   |   기본         | productId <br> productName <br> productPrice <br> productImageUrl <br> productUrl | 상품에 대한 상세 보기등을 처리하기 위한 이벤트 |
+| DMFavorite        |   기본         | productId <br> productName <br> productPrice <br> productImageUrl <br> productUrl | 상품에 대한 좋아요(즐겨찾기) 관련 이벤트  |
+| DMCart            |   기본         | productId <br> productName <br> productPrice <br> productQty <br> productImageUrl <br> productUrl| 장바구니 이벤트  |
+| DMOrder           |   기본         | orderId <br> totalPrice <br> totalQuantity <br> products | 상품 구매 이벤트(구매 화면으로 이동) |
+| DMOrderCancel     |   기본         | orderId <br> products | (결제한)구매 취소  |
+| DMOrderOut        |   기본         | products | 구매 화면에서 결제를 하지 않고 빠져나간 경우 |
+| DMCustomEvent     |   사용자 지정    | 없음 |  사용자 지정 이벤트  |
+| DMInstall         |   SDK 자체 처리 | 없음  | 앱 설치 이벤트  |
+| DMVisit           |   SDK 자체 처리 | 없음 | 앱 실행 (외부에서 앱 진입 등) |
+| DMPageView        |   SDK 자체 처리 | 없음  | 화면 전환 이벤트 ( Activity 단위 처리) |
+| DMOut             |   SDK 자체 처리 | 없음 | 앱 종료 이벤트 |
  
 * SDK 자체 처리 타입의 경우 특별한 경우가 아니라면 직접 이벤트를 만들어서 전달하실 필요가 없습니다.
 <br><br>
@@ -247,6 +269,26 @@ func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
 }
 
 ```
+
+
+### 6) DMPageView 이벤트
+DMPageView 이벤트는 화면전환에 대한 이벤트로, SDK에서 직접 처리하고 있으나 ViewController를 기반으로 동작합니다.  
+따라서 앱내 페이지 전환등이 하나의 ViewController안에서 커스텀 View를 교체하는 형태로 이루어지거나 이와 유사하게 동작하는 경우,  
+화면 전환에 대한 이벤트가 제대로 확인되지 않을 수 있습니다.
+만약 화면 전환등이 ViewController를 기반으로 발생하지 않는 경우 아래와 같이 별도로 이벤트를 추가하여 화면 전환에 대한 이벤트를 추적해야 합니다.
+```Swift
+
+let pageView = DMPageView(pvInName: "현재 노출된 화면 이름", pvOutName: "이전에 노출된 화면 이름")
+DataManagerSDK.addEvent(event: eventModel)
+
+
+```
+* ViewController에서 처음열린 ViewController등, 이전에 노출된 화면 이름을 특별히 지정하기 어려운 경우 빈값 또는 ViewController 이름을 지정하시면 됩니다.
+
+
+<br>
+<br>
+
 
 <br>
 <br>
