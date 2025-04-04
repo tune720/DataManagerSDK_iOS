@@ -13970,69 +13970,69 @@
       "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMUTMParameterManager.swift",
       "kind": "StringLiteral",
       "offset": 289,
+      "length": 8,
+      "value": "\"direct\""
+    },
+    {
+      "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMUTMParameterManager.swift",
+      "kind": "StringLiteral",
+      "offset": 326,
+      "length": 6,
+      "value": "\"none\""
+    },
+    {
+      "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMUTMParameterManager.swift",
+      "kind": "StringLiteral",
+      "offset": 363,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMUTMParameterManager.swift",
       "kind": "StringLiteral",
-      "offset": 320,
+      "offset": 395,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMUTMParameterManager.swift",
       "kind": "StringLiteral",
-      "offset": 353,
+      "offset": 424,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMUTMParameterManager.swift",
       "kind": "StringLiteral",
-      "offset": 385,
+      "offset": 463,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMUTMParameterManager.swift",
       "kind": "StringLiteral",
-      "offset": 414,
+      "offset": 502,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMUTMParameterManager.swift",
       "kind": "StringLiteral",
-      "offset": 453,
+      "offset": 542,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMUTMParameterManager.swift",
       "kind": "StringLiteral",
-      "offset": 492,
+      "offset": 569,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMUTMParameterManager.swift",
       "kind": "StringLiteral",
-      "offset": 532,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMUTMParameterManager.swift",
-      "kind": "StringLiteral",
-      "offset": 559,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMUTMParameterManager.swift",
-      "kind": "StringLiteral",
-      "offset": 591,
+      "offset": 601,
       "length": 2,
       "value": "\"\""
     },
@@ -14632,6 +14632,13 @@
       "value": "\"\""
     },
     {
+      "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/DataManagerSDKInfos.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1898,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Utils\/DHLogger.swift",
       "kind": "StringLiteral",
       "offset": 238,
@@ -14795,14 +14802,21 @@
     {
       "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMEventManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1330,
+      "offset": 903,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMEventManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2203,
+      "offset": 1354,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/enliplemacbook\/Desktop\/Data Manager\/iOS\/DataManagerSDK\/DataManagerSDK\/Manager\/DMEventManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2255,
       "length": 4,
       "value": "true"
     }
