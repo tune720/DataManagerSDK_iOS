@@ -53,6 +53,19 @@ DataManager SDK는 Swift 기반으로 개발되었으나, Objective-C 또한 지
 다만 가이드 문서는 Swift를 기준으로 설명하고 있으며, 해당 내용을 참고하여 Objective-C에서도 활용하시면 됩니다.
 
 
+### 3) SKAdNetworkIdentifier 추가
+아래와 같이 SKAdNetworkIdentifier를 추가해 줍니다.
+``` swift
+<key>SKAdNetworkItems</key>
+<array>
+  <dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>gl4yvzy43k.adattributionkit</string>
+  </dict>
+</array>
+```
+
+
 
 ### 4) ATT(App Tracking Transparency) framework 적용
 iOS14 타겟팅된 앱은 IDFA 식별자를 얻기 위해서는 ATT Framework를 반드시 적용해야 합니다.  
