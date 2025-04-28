@@ -110,13 +110,13 @@ import DataManagerSDK		// DataManagerSDK 추가
 ```
 
 SDK의 초기화는 아래와 같이 AppDelegate 또는 SceneDelegate등 앱 실행시 가장 먼저 이벤트를 받을 수 있는 곳에 구현하는 것을 권장드립니다.  
-AppKey의 경우 DataManager 관리자 페이지에서 확인 가능 합니다.
+서비스 키의 경우 DataManager 관리자 페이지에서 확인 가능 합니다.
 
 ```swift
 //in ApppDelegate
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
-    DataManagerSDK.initSDK(appKey: "{발급받은 AppKey}")
+    DataManagerSDK.initSDK(appKey: "{ 서비스키 }")
     
     return true
 }
