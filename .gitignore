@@ -73,7 +73,9 @@ DerivedData/
 ## App packaging
 *.ipa
 *.dSYM.zip
-*.dSYM
+
+# xcframework 배포를 위해 주석처리
+# *.dSYM 
 
 ## Playgrounds
 timeline.xctimeline
