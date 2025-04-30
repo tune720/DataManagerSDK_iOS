@@ -15,9 +15,9 @@
 DataManager SDK는 Swift로 개발되었습니다. Swift 기반의 프로젝트에서 DataManager SDK를 사용하시려면 반드시 최신 버전의 Xcode를 사용해주세요.
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.7
+- 최신버전 : 1.0.8
 - 변경사항
-  - dSYM 이슈 수정
+  - Bug Fix
 
 <br>
 <br><br>
@@ -312,6 +312,7 @@ DataManagerSDK.addEvent(event: eventModel)
 # DataManager iOS SDK Release History
  | version |        Description        |
  | :-----: | :------------------------ |
+ | 1.0.8   |  Bug Fix           |
  | 1.0.7   |  dSYM 이슈 수정           |
  | 1.0.4   |  오류수정                 |
  | 1.0.3   |  오류수정                 |
