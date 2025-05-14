@@ -227,8 +227,14 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 | DMVisit           |   SDK 자체 처리 | 없음 | 앱 실행 (외부에서 앱 진입 등) |
 | DMPageView        |   SDK 자체 처리 | 없음  | 화면 전환 이벤트 ( Activity 단위 처리) |
 | DMOut             |   SDK 자체 처리 | 없음 | 앱 종료 이벤트 |
+| DMDeepLinkOpen    |   SDK 자체 처리 | 없음 | DeepLink를 통한 앱 실행 이벤트 |
  
 * SDK 자체 처리 타입의 경우 특별한 경우가 아니라면 직접 이벤트를 만들어서 전달하실 필요가 없습니다.
+* 필수 파라메터의 경우 반드시 지정되어야 하는 값 입니다.  해당값을 할당하기 위한 함수들이 있으며 해당 함수를 통해 값을 지정해주시면 됩니다.
+* 필수 파라메터가 없는 경우 각 클래스 생성시 받는 값외에 반드시 지정해주어야 할 값들이 없는 경우 입니다.
+* 파라메터에서 products의 경우 이벤트 클래스의 products에 DMProduct 배열을 설정하시거나,  
+  customEvent.addCustomData(key: DMParams.products.stringValue, value: [DMProduct]) 를 사용하시면 됩니다.
+<br><br>
 <br><br>
 
 
